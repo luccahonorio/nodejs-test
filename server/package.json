@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/opala-studios/nodejs-test#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.12.3"
+    "express": "^4.17.1"
   }
 }
