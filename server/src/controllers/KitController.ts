@@ -3,7 +3,7 @@ import { getRepository } from 'typeorm';
 import Kit from '../models/Kit';
 
 export default{
-  async index_name(request:Request,response:Response){
+  async get_by_name(request:Request,response:Response){
     const {name} = request.query
     
     const KitRepository = getRepository(Kit,"default")
@@ -39,7 +39,6 @@ export default{
     await KitRepository.save(kit)
     return response.status(201).json(kit)
   },
-
   async update_kit(request: Request, response: Response){
     const {id} = request.params
     const {name}= request.body
@@ -54,5 +53,4 @@ export default{
     await KitRepository.save(kit)
     return response.status(201).json(kit)
   }
-  
 }
