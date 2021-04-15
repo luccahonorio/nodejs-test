@@ -3,14 +3,21 @@ import { getRepository } from 'typeorm';
 import Kit from '../models/Kit';
 
 export default{
-  async get_by_name(request:Request,response:Response){
-    const {name} = request.query
-    
+    async get_by_name(request:Request,response:Response){
     const KitRepository = getRepository(Kit,"default")
+    
+    const {name} = request.query
+
+    if(!name){
+      const kits = await KitRepository.find()
+      return response.status(201).json(kits)
+    }
+    
     const kits = (await KitRepository.find(
       {
         name: String(name)
       })).filter(kit => kit.isDeleted !== true)
+    
     return response.status(201).json(kits)
   },
   async create_kit(request:Request,response:Response){
