@@ -1,6 +1,10 @@
 # Opala Studios | Teste Node.js
 ## Server
 
+Para rodar o servidor no console rodar o comando yarn depois yarn dev para iniciar
+Para rodar a pagina web no console rodar o comando yarn depois yarn dev para iniciar
+
+
 Criar uma API RESTful utilizando o `express` para gerênciar os kits do Super Pads
 
 - Kit
