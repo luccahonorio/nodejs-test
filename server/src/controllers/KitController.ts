@@ -37,8 +37,10 @@ export default{
   },
   async delete_kit(request: Request, response: Response){
     const {id} = request.params
+    
     const KitRepository = getRepository(Kit,"default")
     const kit = await KitRepository.findOne({id: Number(id)})
+    
     if (!kit) {
       throw new Error('Não encontrou esse kit')
     }
@@ -51,7 +53,6 @@ export default{
     const {name}= request.body
     const KitRepository = getRepository(Kit,"default")
     const kit = await KitRepository.findOne({id: Number(id)})
-
     if (!kit) {
       throw new Error('Não encontrou esse kit')
     }
